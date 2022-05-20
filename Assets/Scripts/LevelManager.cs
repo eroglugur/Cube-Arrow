@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class InputManager : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
     public void Restart()
     {
