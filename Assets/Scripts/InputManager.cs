@@ -3,11 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class InputManager : MonoBehaviour
 {
-    void Update()
+    public void Restart()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(0);
-        }
+        SceneManager.LoadScene(0);
     }
 }
