@@ -12,16 +12,15 @@ public class QuadController : MonoBehaviour
         SetTextColor(Color.yellow);
         
         score = int.Parse(scoreText.text);
+        RandomizeNumber();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void ProcessCollision(GameObject collision)
     {
         UpdateScore();
         
         collision.gameObject.transform.SetParent(transform);
-        ArrowSpawner.Instance.SpawnArrow();
     }
-    
 
     private void UpdateScore()
     {
@@ -57,6 +56,16 @@ public class QuadController : MonoBehaviour
     
     private void UpdateScoreText()
     {
+        scoreText.text = score.ToString();
+    }
+
+    public void RandomizeNumber()
+    {       
+        scoreText = GetComponentInChildren<TMP_Text>();
+        score = int.Parse(scoreText.text);
+
+        int randomNumber = Random.Range(1, 6);
+        score = randomNumber;
         scoreText.text = score.ToString();
     }
     

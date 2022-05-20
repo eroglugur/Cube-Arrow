@@ -4,18 +4,21 @@ using UnityEngine;
 public class ArrowController : MonoBehaviour
 {
     private bool moved;
+    private bool collided;
     private Tween myTween;
 
     private Rigidbody rb;
     private ArrowController arrowController;
 
+    private float startPosY = -0.4f;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         arrowController = GetComponent<ArrowController>();
         moved = false;
+        collided = false;
 
-        transform.DOMoveY(-0.4f, 0.25f);
+        transform.DOMoveY(startPosY, 0.25f);
     }
 
     private void Update()
@@ -25,6 +28,7 @@ public class ArrowController : MonoBehaviour
             if (!moved)
             {
                 myTween = transform.DOMove(Vector3.forward, 1f);
+                ArrowSpawner.Instance.SpawnArrow();
                 moved = true;
             }
         }
@@ -32,11 +36,15 @@ public class ArrowController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Target"))
+        if (collision.gameObject.CompareTag("Target") && !collided)
         {
+            collided = true;
+            collision.gameObject.GetComponent<QuadController>().ProcessCollision(gameObject);
+            
             myTween.Kill();
             rb.isKinematic = true;
             arrowController.enabled = false;
+            
         }
     }
 }
