@@ -1,20 +1,20 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class ArrowController : MonoBehaviour
+public class Arrow : MonoBehaviour
 {
     private bool moved;
     private bool collided;
     private Tween myTween;
 
     private Rigidbody rb;
-    private ArrowController arrowController;
+    private Arrow arrow;
 
     private float startPosY = -0.4f;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        arrowController = GetComponent<ArrowController>();
+        arrow = GetComponent<Arrow>();
         moved = false;
         collided = false;
 
@@ -28,7 +28,7 @@ public class ArrowController : MonoBehaviour
             if (!moved)
             {
                 myTween = transform.DOMove(Vector3.forward, 1f);
-                ArrowSpawner.Instance.SpawnArrow();
+                SpawnManager.Instance.SpawnArrow();
                 moved = true;
             }
         }
@@ -39,11 +39,11 @@ public class ArrowController : MonoBehaviour
         if (collision.gameObject.CompareTag("Target") && !collided)
         {
             collided = true;
-            collision.gameObject.GetComponent<QuadController>().ProcessCollision(gameObject);
+            collision.gameObject.GetComponent<Quad>().ProcessCollision(gameObject);
             
             myTween.Kill();
             rb.isKinematic = true;
-            arrowController.enabled = false;
+            arrow.enabled = false;
             
         }
     }

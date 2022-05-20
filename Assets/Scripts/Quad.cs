@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class QuadController : MonoBehaviour
+public class Quad : MonoBehaviour
 {
     private TMP_Text scoreText;
     public int score;
@@ -35,13 +35,13 @@ public class QuadController : MonoBehaviour
             score--;
 
             GameManager.Instance.SetGameActive(false);
-            CubeController.Instance.DoFailMove();
+            Cube.Instance.DoFailMove();
         }
 
         if (score == 0)
         {
             SetTextColor(Color.green);
-            CubeController.Instance.IncreaseScoreCounter();
+            Cube.Instance.IncreaseScoreCounter();
         }
         else if (score < 0)
         {

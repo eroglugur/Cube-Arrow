@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class CubeController : Singleton<CubeController>
+public class Cube : Singleton<Cube>
 {
     [SerializeField] private List<GameObject> quads;
 

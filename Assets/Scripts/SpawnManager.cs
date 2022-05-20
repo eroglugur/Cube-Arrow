@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrowSpawner : Singleton<ArrowSpawner>
+public class SpawnManager : Singleton<SpawnManager>
 {
     [SerializeField] private List<GameObject> quads;
     [SerializeField] private GameObject arrow;
@@ -18,7 +18,7 @@ public class ArrowSpawner : Singleton<ArrowSpawner>
     {
         foreach (var quad in quads)
         {
-            count += quad.GetComponentInChildren<QuadController>().score;
+            count += quad.GetComponentInChildren<Quad>().score;
         }
 
         return count;
@@ -35,7 +35,7 @@ public class ArrowSpawner : Singleton<ArrowSpawner>
             }
             else if (count < 0)
             {
-                CubeController.Instance.DoFailMove();
+                Cube.Instance.DoFailMove();
             }
         }
     }
