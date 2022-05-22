@@ -4,46 +4,46 @@ using UnityEngine;
 public class Quad : MonoBehaviour
 {
     private TMP_Text scoreText;
-    public int score;
+    public int quadScore;
 
     void Awake()
     {
         scoreText = GetComponentInChildren<TMP_Text>();
         SetTextColor(Color.yellow);
         
-        score = int.Parse(scoreText.text);
-        RandomizeNumber();
+        quadScore = int.Parse(scoreText.text);
+        RandomizeQuadNumber();
     }
 
     public void ProcessCollision(GameObject collision)
     {
-        UpdateScore();
+        UpdateQuadScore();
         
         collision.gameObject.transform.SetParent(transform);
     }
 
-    private void UpdateScore()
+    private void UpdateQuadScore()
     {
-        if (score > 0)
+        if (quadScore > 0)
         {
-            score--;
+            quadScore--;
             
-            UpdateScoreText();
+            UpdateQuadScoreText();
         }
         else
         {
-            score--;
+            quadScore--;
 
             GameManager.Instance.SetGameActive(false);
             Cube.Instance.DoFailMove();
         }
 
-        if (score == 0)
+        if (quadScore == 0)
         {
             SetTextColor(Color.green);
-            Cube.Instance.IncreaseScoreCounter();
+            GameManager.Instance.IncreaseScoreCounter();
         }
-        else if (score < 0)
+        else if (quadScore < 0)
         {
             SetTextColor(Color.red);
         }
@@ -54,19 +54,19 @@ public class Quad : MonoBehaviour
         scoreText.color = color;
     }
     
-    private void UpdateScoreText()
+    private void UpdateQuadScoreText()
     {
-        scoreText.text = score.ToString();
+        scoreText.text = quadScore.ToString();
     }
 
-    public void RandomizeNumber()
+    public void RandomizeQuadNumber()
     {       
         scoreText = GetComponentInChildren<TMP_Text>();
-        score = int.Parse(scoreText.text);
+        quadScore = int.Parse(scoreText.text);
 
         int randomNumber = Random.Range(1, 6);
-        score = randomNumber;
-        scoreText.text = score.ToString();
+        quadScore = randomNumber;
+        scoreText.text = quadScore.ToString();
     }
     
 }

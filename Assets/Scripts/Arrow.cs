@@ -11,6 +11,7 @@ public class Arrow : MonoBehaviour
     private Arrow arrow;
 
     private float startPosY = -0.4f;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -23,7 +24,7 @@ public class Arrow : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && GameManager.Instance.GetIsGameActive())
         {
             if (!moved)
             {
@@ -36,15 +37,27 @@ public class Arrow : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Target") && !collided)
+        if (!collision.gameObject.CompareTag(null) && !collided)
         {
-            collided = true;
+            if (collision.gameObject.CompareTag("Arrow"))
+            {
+                GameManager.Instance.SetGameActive(false);
+
+                transform.SetParent(collision.gameObject.transform);
+                
+                myTween.Kill();
+                rb.isKinematic = true;
+                arrow.enabled = false;
+
+                Cube.Instance.DoFailMove();
+            }
+
             collision.gameObject.GetComponent<Quad>().ProcessCollision(gameObject);
-            
+
+            collided = true;
             myTween.Kill();
             rb.isKinematic = true;
             arrow.enabled = false;
-            
         }
     }
 }

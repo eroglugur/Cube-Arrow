@@ -18,7 +18,7 @@ public class SpawnManager : Singleton<SpawnManager>
     {
         foreach (var quad in quads)
         {
-            count += quad.GetComponentInChildren<Quad>().score;
+            count += quad.GetComponentInChildren<Quad>().quadScore;
         }
 
         return count;
