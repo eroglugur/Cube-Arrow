@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2878609458285124593}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +26,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2878609458285124599}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0001}
+  m_LocalPosition: {x: 0, y: 0, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2878609459843252236}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 678694704}
   m_Layer: 0
   m_Name: Quad 4
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bcb8ebffc847b04b81a4eee2f50c094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  quadScore: 0
 --- !u!1 &2878609458582341084
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 2878609458582341086}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -271,7 +271,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2878609458582341084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0001}
+  m_LocalPosition: {x: 0, y: 0, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2878609460286115860}
@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 2878609458732441090}
   m_Layer: 0
   m_Name: Side 3
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 2878609458778244556}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -436,7 +436,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2878609458778244530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0001}
+  m_LocalPosition: {x: 0, y: 0, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2878609459960332961}
@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 6688146472946526513}
   m_Layer: 0
   m_Name: Quad 3
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -654,7 +654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bcb8ebffc847b04b81a4eee2f50c094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  quadScore: 0
 --- !u!1 &2878609459027990717
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,7 +762,7 @@ GameObject:
   - component: {fileID: 2878609459042735630}
   m_Layer: 0
   m_Name: Side 1
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -796,7 +796,7 @@ GameObject:
   - component: {fileID: 2878609459077802749}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -893,7 +893,7 @@ GameObject:
   - component: {fileID: 2878609459211152092}
   m_Layer: 0
   m_Name: Side 4
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -924,6 +924,7 @@ GameObject:
   - component: {fileID: 2878609459224197352}
   - component: {fileID: 2878609459224197359}
   - component: {fileID: 2878609459224197353}
+  - component: {fileID: 533241569}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -976,6 +977,19 @@ MonoBehaviour:
   - {fileID: 2878609459231809979}
   - {fileID: 2878609458815415775}
   - {fileID: 2878609458544486695}
+--- !u!65 &533241569
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2878609459224197356}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2878609459231809979
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,7 +1005,7 @@ GameObject:
   - component: {fileID: 2831042199216456387}
   m_Layer: 0
   m_Name: Quad 2
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1086,7 +1100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bcb8ebffc847b04b81a4eee2f50c094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  quadScore: 0
 --- !u!1 &2878609459377879100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,7 +1177,7 @@ GameObject:
   - component: {fileID: 2878609459843252237}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1359,7 +1373,7 @@ GameObject:
   - component: {fileID: 2878609459960332962}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1458,7 +1472,7 @@ GameObject:
   - component: {fileID: 2878609460093394069}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1471,7 +1485,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2878609460093394075}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0001}
+  m_LocalPosition: {x: 0, y: 0, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2878609459077802748}
@@ -1594,7 +1608,7 @@ GameObject:
   - component: {fileID: 6947114761534425466}
   m_Layer: 0
   m_Name: Quad 1
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1689,7 +1703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bcb8ebffc847b04b81a4eee2f50c094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
+  quadScore: 0
 --- !u!1 &2878609460286115867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,7 +1718,7 @@ GameObject:
   - component: {fileID: 2878609460286115861}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1801,7 +1815,7 @@ GameObject:
   - component: {fileID: 2878609460389452960}
   m_Layer: 0
   m_Name: Side 2
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

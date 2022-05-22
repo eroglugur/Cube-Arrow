@@ -37,6 +37,9 @@ public class Arrow : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        myTween.Kill();
+     
+        
         if (!collision.gameObject.CompareTag(null) && !collided)
         {
             if (collision.gameObject.CompareTag("Arrow"))
@@ -44,7 +47,7 @@ public class Arrow : MonoBehaviour
                 GameManager.Instance.SetGameActive(false);
 
                 transform.SetParent(collision.gameObject.transform);
-                
+
                 myTween.Kill();
                 rb.isKinematic = true;
                 arrow.enabled = false;
@@ -53,9 +56,7 @@ public class Arrow : MonoBehaviour
             }
 
             collision.gameObject.GetComponent<Quad>().ProcessCollision(gameObject);
-
             collided = true;
-            myTween.Kill();
             rb.isKinematic = true;
             arrow.enabled = false;
         }
