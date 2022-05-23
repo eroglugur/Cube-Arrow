@@ -14,9 +14,8 @@ public class GameManager : Singleton<GameManager>
     {
         if (scoreCounter == 4)
         {
-            SetGameActive(false);
-
             StartCoroutine(Cube.Instance.DoWinMove());
+            SetGameActive(false);
         }
     }
 

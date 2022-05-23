@@ -14,16 +14,6 @@ public class SpawnManager : Singleton<SpawnManager>
         SpawnArrow();
     }
 
-    private int GetArrowCount()
-    {
-        foreach (var quad in quads)
-        {
-            count += quad.GetComponentInChildren<Quad>().quadScore;
-        }
-
-        return count;
-    }
-
     public void SpawnArrow()
     {
         if (GameManager.Instance.GetIsGameActive())
@@ -38,5 +28,15 @@ public class SpawnManager : Singleton<SpawnManager>
                 Cube.Instance.DoFailMove();
             }
         }
+    }
+
+    private int GetArrowCount()
+    {
+        foreach (var quad in quads)
+        {
+            count += quad.GetComponentInChildren<Quad>().quadScore;
+        }
+
+        return count;
     }
 }

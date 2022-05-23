@@ -15,7 +15,7 @@ public class Quad : MonoBehaviour
         RandomizeQuadNumber();
     }
 
-    public void ProcessCollision(GameObject collision)
+    public void ProcessQuadCollision(GameObject collision)
     {
         UpdateQuadScore();
         
@@ -43,10 +43,6 @@ public class Quad : MonoBehaviour
             SetTextColor(Color.green);
             GameManager.Instance.IncreaseScoreCounter();
         }
-        else if (quadScore < 0)
-        {
-            SetTextColor(Color.red);
-        }
     }
 
     private void SetTextColor(Color color)
@@ -68,5 +64,4 @@ public class Quad : MonoBehaviour
         quadScore = randomNumber;
         scoreText.text = quadScore.ToString();
     }
-    
 }
